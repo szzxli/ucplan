@@ -1,4 +1,4 @@
-var CACHE = 'ucplan-v14';
+var CACHE = 'ucplan-v15';
 var FILES = ['/', '/transfer-os', '/uc-course', 'styles.css', 'app.js', 'i18n.js', 'manifest.webmanifest', 'favicon.svg', 'logo.svg', 'lang/en.json', 'lang/es.json', 'lang/zh-CN.json', 'lang/zh-TW.json', 'lang/ko.json', 'lang/ja.json'];
 self.addEventListener('install', function (e) {
   self.skipWaiting();

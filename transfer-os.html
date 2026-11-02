@@ -6,7 +6,7 @@
 <title>Transfer-OS — See Your Whole Transfer Path | UCPlan</title>
 <meta name="description" content="Transfer-OS shows the whole transfer path from your California community college to your target UC and major, based on public ASSIST data.">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#14532d">
+<meta name="theme-color" content="#103d36">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,7 +14,7 @@
 <header class="top">
   <a class="brand" href="/"><img src="logo.svg" alt="UCPlan" class="brand-logo"></a>
   <nav>
-    <a href="/transfer-os" data-i18n="nav.transfer">Transfer-OS</a>
+    <a href="/transfer-os" aria-current="page" data-i18n="nav.transfer">Transfer-OS</a>
     <a href="/uc-course" data-i18n="nav.course">UC Course Planner</a>
     <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     <a href="/#support" data-i18n="nav.support">Support</a>
@@ -31,8 +31,13 @@
     </div>
   </nav>
 </header>
+<nav class="route-track" aria-label="Planning sequence">
+  <a class="route-step" href="/transfer-os" aria-current="step"><span class="step-no" aria-hidden="true">01</span><span data-i18n="nav.transfer">Transfer-OS</span></a>
+  <span class="route-connector" aria-hidden="true"></span>
+  <a class="route-step" href="/uc-course"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.course">UC Course Planner</span></a>
+</nav>
 <main>
-  <section class="hero">
+  <section class="hero subpage-hero">
     <h1 data-i18n="tos.hero.title">Transfer-OS: see the whole path.</h1>
     <p data-i18n="tos.hero.sub">Pick your community college, your target UC, and your major — see what transfers and what is still missing, before you plan a single semester.</p>
     <div class="cta-row">

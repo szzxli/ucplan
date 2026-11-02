@@ -6,7 +6,7 @@
 <title>UCPlan — Free California Community College to UC Transfer Planning</title>
 <meta name="description" content="UCPlan offers two free tools that help California community college students plan their transfer to UC: Transfer-OS for the whole path, and UC Course Planner for semester-by-semester courses.">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#14532d">
+<meta name="theme-color" content="#103d36">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,8 +31,13 @@
     </div>
   </nav>
 </header>
+<nav class="route-track" aria-label="Planning sequence">
+  <a class="route-step" href="/transfer-os"><span class="step-no" aria-hidden="true">01</span><span data-i18n="nav.transfer">Transfer-OS</span></a>
+  <span class="route-connector" aria-hidden="true"></span>
+  <a class="route-step" href="/uc-course"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.course">UC Course Planner</span></a>
+</nav>
 <main>
-  <section class="hero">
+  <section class="hero home-hero">
     <h1 data-i18n="index.hero.title">Plan your path from community college to UC.</h1>
     <p data-i18n="index.hero.sub">Two free tools. One plan. Built on public ASSIST data — not affiliated with UC or ASSIST.</p>
     <div class="cta-row">
@@ -43,7 +48,7 @@
 
   <section>
     <h2 data-i18n="index.stage.title">Where are you now? Start from your stage, not from the tool list.</h2>
-    <div class="cards">
+    <div class="cards stage-cards">
       <article class="card">
         <h3 data-i18n="index.stage.a.title">At a community college, getting ready to transfer</h3>
         <p data-i18n="index.stage.a.desc">Check which courses transfer, what your target major still requires, and what is missing.</p>
@@ -64,7 +69,7 @@
 
   <section>
     <h2 data-i18n="index.tools.title">Two tools, one plan</h2>
-    <div class="cards">
+    <div class="cards tool-cards">
       <article class="card">
         <h3 data-i18n="index.card.t.title">Transfer-OS</h3>
         <p data-i18n="index.card.t.desc">See the whole path. Pick your community college, your target UC, and your major — see what transfers and what is still missing.</p>
@@ -80,7 +85,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="process-section">
     <h2 data-i18n="index.how.title">How it works</h2>
     <ol class="steps">
       <li data-i18n="index.how.1">Pick your starting point: your community college, your target UC, your major.</li>

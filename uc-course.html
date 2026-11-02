@@ -6,7 +6,7 @@
 <title>UC Course Planner — Plan Semester by Semester | UCPlan</title>
 <meta name="description" content="UC Course Planner turns your transfer path into a semester-by-semester course plan, with prerequisites and general education lined up.">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#14532d">
+<meta name="theme-color" content="#103d36">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,7 +15,7 @@
   <a class="brand" href="/"><img src="logo.svg" alt="UCPlan" class="brand-logo"></a>
   <nav>
     <a href="/transfer-os" data-i18n="nav.transfer">Transfer-OS</a>
-    <a href="/uc-course" data-i18n="nav.course">UC Course Planner</a>
+    <a href="/uc-course" aria-current="page" data-i18n="nav.course">UC Course Planner</a>
     <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     <a href="/#support" data-i18n="nav.support">Support</a>
     <div class="lang">
@@ -31,8 +31,13 @@
     </div>
   </nav>
 </header>
+<nav class="route-track" aria-label="Planning sequence">
+  <a class="route-step is-complete" href="/transfer-os"><span class="step-no" aria-hidden="true">01</span><span data-i18n="nav.transfer">Transfer-OS</span></a>
+  <span class="route-connector" aria-hidden="true"></span>
+  <a class="route-step" href="/uc-course" aria-current="step"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.course">UC Course Planner</span></a>
+</nav>
 <main>
-  <section class="hero">
+  <section class="hero subpage-hero">
     <h1 data-i18n="cuc.hero.title">UC Course Planner: plan semester by semester.</h1>
     <p data-i18n="cuc.hero.sub">Your transfer path, turned into actual courses in order — prerequisites respected, general education and major requirements lined up.</p>
     <div class="cta-row">
