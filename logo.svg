@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40">
   <svg x="0" y="0" width="40" height="40" viewBox="0 0 64 64">
-    <rect width="64" height="64" rx="14" fill="#14532d"/>
-    <path d="M20 18 V38 A12 12 0 0 0 44 38 V20" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
-    <path d="M35 26 L44 15 L53 26" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14 16 V36 A18 18 0 0 0 50 36 V24" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M41 30 L50 19 L59 30" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   <text x="50" y="29" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#14532d">UCPlan</text>
 </svg>
