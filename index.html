@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page="index">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,94 +14,106 @@
 <header class="top">
   <a class="brand" href="index.html">UCPlan</a>
   <nav>
-    <a href="transfer-os.html">Transfer-OS</a>
-    <a href="uc-course.html">UC Course Planner</a>
-    <a href="#faq">FAQ</a>
-    <a href="#support">Support</a>
+    <a href="transfer-os.html" data-i18n="nav.transfer">Transfer-OS</a>
+    <a href="uc-course.html" data-i18n="nav.course">UC Course Planner</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#support" data-i18n="nav.support">Support</a>
+    <div class="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">English</button>
+      <ul class="lang-list" id="langList" hidden>
+        <li><button data-lang="en">English</button></li>
+        <li><button data-lang="es">Español</button></li>
+        <li><button data-lang="zh-CN">简体中文</button></li>
+        <li><button data-lang="zh-TW">繁體中文</button></li>
+        <li><button data-lang="ko">한국어</button></li>
+        <li><button data-lang="ja">日本語</button></li>
+      </ul>
+    </div>
   </nav>
 </header>
 <main>
   <section class="hero">
-    <h1>Plan your path from community college to UC.</h1>
-    <p>Two free tools. One plan. Built on public ASSIST data — not affiliated with UC or ASSIST.</p>
+    <h1 data-i18n="index.hero.title">Plan your path from community college to UC.</h1>
+    <p data-i18n="index.hero.sub">Two free tools. One plan. Built on public ASSIST data — not affiliated with UC or ASSIST.</p>
     <div class="cta-row">
-      <a class="btn" href="transfer-os.html">Start with Transfer-OS</a>
-      <a class="btn secondary" href="uc-course.html">Plan courses with UC Course Planner</a>
+      <a class="btn" href="transfer-os.html" data-i18n="index.cta.transfer">Start with Transfer-OS</a>
+      <a class="btn secondary" href="uc-course.html" data-i18n="index.cta.course">Plan courses with UC Course Planner</a>
     </div>
   </section>
 
   <section>
-    <h2>Two tools, one plan</h2>
+    <h2 data-i18n="index.tools.title">Two tools, one plan</h2>
     <div class="cards">
       <article class="card">
-        <h3>Transfer-OS</h3>
-        <p><strong>See the whole path.</strong> Pick your community college, your target UC, and your major — see what transfers and what is still missing.</p>
-        <p>Covers 50 California community colleges × 6 UC campuses.</p>
-        <p><a href="transfer-os.html">About Transfer-OS →</a> · <a href="https://szzxli.github.io/transfer-os/mobile/www/">Open the tool →</a></p>
+        <h3 data-i18n="index.card.t.title">Transfer-OS</h3>
+        <p data-i18n="index.card.t.desc">See the whole path. Pick your community college, your target UC, and your major — see what transfers and what is still missing.</p>
+        <p data-i18n="index.card.t.cover">Covers 50 California community colleges × 6 UC campuses.</p>
+        <p><a href="transfer-os.html" data-i18n="index.card.t.about">About Transfer-OS →</a> · <a href="https://szzxli.github.io/transfer-os/mobile/www/" data-i18n="index.card.t.open">Open the tool →</a></p>
       </article>
       <article class="card">
-        <h3>UC Course Planner</h3>
-        <p><strong>Plan semester by semester.</strong> Which courses to take, in what order, with prerequisites and general education lined up.</p>
-        <p>Programs at UC Irvine, UC San Diego, and UC Santa Barbara.</p>
-        <p><a href="uc-course.html">About UC Course Planner →</a> · <a href="https://szzxli.github.io/UC-Course/web/">Open the tool →</a></p>
+        <h3 data-i18n="index.card.c.title">UC Course Planner</h3>
+        <p data-i18n="index.card.c.desc">Plan semester by semester. Which courses to take, in what order, with prerequisites and general education lined up.</p>
+        <p data-i18n="index.card.c.cover">Programs at UC Irvine, UC San Diego, and UC Santa Barbara.</p>
+        <p><a href="uc-course.html" data-i18n="index.card.c.about">About UC Course Planner →</a> · <a href="https://szzxli.github.io/UC-Course/web/" data-i18n="index.card.c.open">Open the tool →</a></p>
       </article>
     </div>
   </section>
 
   <section>
-    <h2>How it works</h2>
+    <h2 data-i18n="index.how.title">How it works</h2>
     <ol class="steps">
-      <li><strong>Pick your starting point.</strong> Your community college, your target UC, your major.</li>
-      <li><strong>See your path</strong> in Transfer-OS — what transfers, what is missing.</li>
-      <li><strong>Plan your semesters</strong> in UC Course Planner — courses in order, prerequisites respected.</li>
+      <li data-i18n="index.how.1">Pick your starting point: your community college, your target UC, your major.</li>
+      <li data-i18n="index.how.2">See your path in Transfer-OS — what transfers, what is missing.</li>
+      <li data-i18n="index.how.3">Plan your semesters in UC Course Planner — courses in order, prerequisites respected.</li>
     </ol>
   </section>
 
   <section>
-    <h2>Free now, Pro later — only for new features</h2>
-    <p>The tools you see today stay free. A Pro plan later will add only new features: TAG tracking, deadline reminders, comparing multiple plans, application-season checklists, and progress export. One account and one payment will unlock Pro in both tools. No prices yet — Pro will be announced when it is ready.</p>
-    <p>Public ASSIST data itself is never charged for.</p>
+    <h2 data-i18n="index.pro.title">Free now, Pro later — only for new features</h2>
+    <p data-i18n="index.pro.p1">The tools you see today stay free. A Pro plan later will add only new features: TAG tracking, deadline reminders, comparing multiple plans, application-season checklists, and progress export. One account and one payment will unlock Pro in both tools. No prices yet — Pro will be announced when it is ready.</p>
+    <p data-i18n="index.pro.p2">Public ASSIST data itself is never charged for.</p>
   </section>
 
   <section id="faq">
-    <h2>FAQ</h2>
+    <h2 data-i18n="index.faq.title">FAQ</h2>
     <details>
-      <summary>Is UCPlan official?</summary>
-      <p>No. UCPlan is an independent project. It is not affiliated with the University of California or with ASSIST. Transfer data comes from public ASSIST reports.</p>
+      <summary data-i18n="index.faq.q1">Is UCPlan official?</summary>
+      <p data-i18n="index.faq.a1">No. UCPlan is an independent project. It is not affiliated with the University of California or with ASSIST. Transfer data comes from public ASSIST reports.</p>
     </details>
     <details>
-      <summary>Does UCPlan guarantee admission?</summary>
-      <p>No. UCPlan is a planning aid. Admission decisions belong to the UC campuses. Nothing here promises or predicts an admission outcome.</p>
+      <summary data-i18n="index.faq.q2">Does UCPlan guarantee admission?</summary>
+      <p data-i18n="index.faq.a2">No. UCPlan is a planning aid. Admission decisions belong to the UC campuses. Nothing here promises or predicts an admission outcome.</p>
     </details>
     <details>
-      <summary>Which UC campuses offer TAG?</summary>
-      <p>Six campuses participate in the Transfer Admission Guarantee (TAG): UC Davis, UC Irvine, UC Merced, UC Riverside, UC Santa Barbara, and UC Santa Cruz. UCLA, UC Berkeley, and UC San Diego do not offer TAG.</p>
+      <summary data-i18n="index.faq.q3">Which UC campuses offer TAG?</summary>
+      <p data-i18n="index.faq.a3">Six campuses participate in the Transfer Admission Guarantee (TAG): UC Davis, UC Irvine, UC Merced, UC Riverside, UC Santa Barbara, and UC Santa Cruz. UCLA, UC Berkeley, and UC San Diego do not offer TAG.</p>
     </details>
     <details>
-      <summary>What does UCPlan cost?</summary>
-      <p>Nothing right now. The free tools stay free. A Pro plan later will add new features only; current features will not be taken away.</p>
+      <summary data-i18n="index.faq.q4">What does UCPlan cost?</summary>
+      <p data-i18n="index.faq.a4">Nothing right now. The free tools stay free. A Pro plan later will add new features only; current features will not be taken away.</p>
     </details>
     <details>
-      <summary>Do I need an account?</summary>
-      <p>No. The free tools work without signing up. An account system will arrive with Pro.</p>
+      <summary data-i18n="index.faq.q5">Do I need an account?</summary>
+      <p data-i18n="index.faq.a5">No. The free tools work without signing up. An account system will arrive with Pro.</p>
     </details>
     <details>
-      <summary>Which colleges are covered?</summary>
-      <p>Transfer-OS covers 50 California community colleges × 6 UC campuses. UC Course Planner covers programs at UC Irvine, UC San Diego, and UC Santa Barbara, and coverage keeps growing.</p>
+      <summary data-i18n="index.faq.q6">Which colleges are covered?</summary>
+      <p data-i18n="index.faq.a6">Transfer-OS covers 50 California community colleges × 6 UC campuses. UC Course Planner covers programs at UC Irvine, UC San Diego, and UC Santa Barbara, and coverage keeps growing.</p>
     </details>
   </section>
 
   <section id="support">
-    <h2>Support</h2>
-    <p>Having a problem with the tools — a page that will not load, a button that does not work, data that looks wrong? Tell us on GitHub:</p>
-    <p><a class="btn" href="https://github.com/szzxli/ucplan/issues">Report an issue on GitHub</a></p>
-    <p>Email support is coming soon. Support covers tool problems only — it does not include personal transfer advising. For questions about your own transfer plan, please check with your college transfer center or a UC admissions counselor.</p>
+    <h2 data-i18n="index.sup.title">Support</h2>
+    <p data-i18n="index.sup.p1">Having a problem with the tools — a page that will not load, a button that does not work, data that looks wrong? Tell us on GitHub:</p>
+    <p><a class="btn" href="https://github.com/szzxli/ucplan/issues" data-i18n="index.sup.btn">Report an issue on GitHub</a></p>
+    <p data-i18n="index.sup.p2">Email support is coming soon. Support covers tool problems only — it does not include personal transfer advising. For questions about your own transfer plan, please check with your college transfer center or a UC admissions counselor.</p>
   </section>
 </main>
 <footer>
-  <p>UCPlan is an independent project. Not affiliated with the University of California or ASSIST. Nothing on this site guarantees admission.</p>
-  <p><a href="index.html">Home</a> · <a href="transfer-os.html">Transfer-OS</a> · <a href="uc-course.html">UC Course Planner</a></p>
+  <p data-i18n="footer.disclaimer">UCPlan is an independent project. Not affiliated with the University of California or ASSIST. Nothing on this site guarantees admission.</p>
+  <p><a href="index.html" data-i18n="footer.home">Home</a> · <a href="transfer-os.html" data-i18n="footer.transfer">Transfer-OS</a> · <a href="uc-course.html" data-i18n="footer.course">UC Course Planner</a></p>
 </footer>
 <script src="app.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page="tos">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,46 +14,58 @@
 <header class="top">
   <a class="brand" href="index.html">UCPlan</a>
   <nav>
-    <a href="transfer-os.html">Transfer-OS</a>
-    <a href="uc-course.html">UC Course Planner</a>
-    <a href="index.html#faq">FAQ</a>
-    <a href="index.html#support">Support</a>
+    <a href="transfer-os.html" data-i18n="nav.transfer">Transfer-OS</a>
+    <a href="uc-course.html" data-i18n="nav.course">UC Course Planner</a>
+    <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="index.html#support" data-i18n="nav.support">Support</a>
+    <div class="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">English</button>
+      <ul class="lang-list" id="langList" hidden>
+        <li><button data-lang="en">English</button></li>
+        <li><button data-lang="es">Español</button></li>
+        <li><button data-lang="zh-CN">简体中文</button></li>
+        <li><button data-lang="zh-TW">繁體中文</button></li>
+        <li><button data-lang="ko">한국어</button></li>
+        <li><button data-lang="ja">日本語</button></li>
+      </ul>
+    </div>
   </nav>
 </header>
 <main>
   <section class="hero">
-    <h1>Transfer-OS: see the whole path.</h1>
-    <p>Pick your community college, your target UC, and your major — see what transfers and what is still missing, before you plan a single semester.</p>
+    <h1 data-i18n="tos.hero.title">Transfer-OS: see the whole path.</h1>
+    <p data-i18n="tos.hero.sub">Pick your community college, your target UC, and your major — see what transfers and what is still missing, before you plan a single semester.</p>
     <div class="cta-row">
-      <a class="btn" href="https://szzxli.github.io/transfer-os/mobile/www/">Open Transfer-OS</a>
-      <a class="btn secondary" href="uc-course.html">Then plan courses →</a>
+      <a class="btn" href="https://szzxli.github.io/transfer-os/mobile/www/" data-i18n="tos.cta.open">Open Transfer-OS</a>
+      <a class="btn secondary" href="uc-course.html" data-i18n="tos.cta.course">Then plan courses →</a>
     </div>
   </section>
 
   <section>
-    <h2>What you get</h2>
+    <h2 data-i18n="tos.what.title">What you get</h2>
     <ul>
-      <li>A transfer path from your college to your UC, by major.</li>
-      <li>Which requirements are already covered, and which are still open.</li>
-      <li>Coverage today: 50 California community colleges × 6 UC campuses.</li>
+      <li data-i18n="tos.what.1">A transfer path from your college to your UC, by major.</li>
+      <li data-i18n="tos.what.2">Which requirements are already covered, and which are still open.</li>
+      <li data-i18n="tos.what.3">Coverage today: 50 California community colleges × 6 UC campuses.</li>
     </ul>
   </section>
 
   <section>
-    <h2>A note on TAG</h2>
-    <p>Six UC campuses participate in the Transfer Admission Guarantee (TAG): UC Davis, UC Irvine, UC Merced, UC Riverside, UC Santa Barbara, and UC Santa Cruz. UCLA, UC Berkeley, and UC San Diego do not offer TAG. Transfer-OS shows you the path either way — TAG or not, the coursework still has to line up.</p>
+    <h2 data-i18n="tos.tag.title">A note on TAG</h2>
+    <p data-i18n="tos.tag.p">Six UC campuses participate in the Transfer Admission Guarantee (TAG): UC Davis, UC Irvine, UC Merced, UC Riverside, UC Santa Barbara, and UC Santa Cruz. UCLA, UC Berkeley, and UC San Diego do not offer TAG. Transfer-OS shows you the path either way — TAG or not, the coursework still has to line up.</p>
   </section>
 
   <section>
-    <h2>Free, no account needed</h2>
-    <p>Transfer-OS is free and works without signing up. It is the first step: see the whole path here, then plan your semesters in UC Course Planner.</p>
-    <p><a href="index.html">← Back to UCPlan home</a></p>
+    <h2 data-i18n="tos.free.title">Free, no account needed</h2>
+    <p data-i18n="tos.free.p">Transfer-OS is free and works without signing up. It is the first step: see the whole path here, then plan your semesters in UC Course Planner.</p>
+    <p><a href="index.html" data-i18n="tos.free.back">← Back to UCPlan home</a></p>
   </section>
 </main>
 <footer>
-  <p>UCPlan is an independent project. Not affiliated with the University of California or ASSIST. Nothing on this site guarantees admission.</p>
-  <p><a href="index.html">Home</a> · <a href="transfer-os.html">Transfer-OS</a> · <a href="uc-course.html">UC Course Planner</a></p>
+  <p data-i18n="footer.disclaimer">UCPlan is an independent project. Not affiliated with the University of California or ASSIST. Nothing on this site guarantees admission.</p>
+  <p><a href="index.html" data-i18n="footer.home">Home</a> · <a href="transfer-os.html" data-i18n="footer.transfer">Transfer-OS</a> · <a href="uc-course.html" data-i18n="footer.course">UC Course Planner</a></p>
 </footer>
 <script src="app.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

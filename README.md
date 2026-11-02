@@ -12,6 +12,11 @@ this site only links out to them.
 - `manifest.webmanifest`, `sw.js`, `app.js` — PWA shell.
   Bump the `CACHE` name in `sw.js` on every release so returning
   visitors never get a stale version.
+- `i18n.js` + `lang/*.json` — language switcher. One button in the
+  header opens a scrollable list: English, Español, 简体中文,
+  繁體中文, 한국어, 日本語. The choice persists in localStorage
+  (`ucplan.lang`); default is English. Page text is keyed with
+  `data-i18n`; every key must exist in every language file.
 
 Content rules (do not break these):
 

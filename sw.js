@@ -1,5 +1,5 @@
-var CACHE = 'ucplan-v1';
-var FILES = ['index.html', 'transfer-os.html', 'uc-course.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'favicon.svg'];
+var CACHE = 'ucplan-v2';
+var FILES = ['index.html', 'transfer-os.html', 'uc-course.html', 'styles.css', 'app.js', 'i18n.js', 'manifest.webmanifest', 'favicon.svg', 'lang/en.json', 'lang/es.json', 'lang/zh-CN.json', 'lang/zh-TW.json', 'lang/ko.json', 'lang/ja.json'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES); }));
 });
