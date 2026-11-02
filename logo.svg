@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 40">
   <svg x="0" y="0" width="40" height="40" viewBox="0 0 64 64">
-    <path d="M16 14 V36 A16 16 0 0 0 48 36 V14" fill="none" stroke="#14532d" stroke-width="4" stroke-linecap="round"/>
+    <path d="M16 14 V36 A16 16 0 0 0 48 36 V26" fill="none" stroke="#14532d" stroke-width="4" stroke-linecap="round"/>
+    <path d="M48 26 L60 10" fill="none" stroke="#14532d" stroke-width="4" stroke-linecap="round"/>
   </svg>
   <text x="50" y="29" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#14532d">UCPlan</text>
 </svg>
