@@ -1,6 +1,6 @@
 // Note: this ref allow-list must match the GoatCounter path function in the page loaders.
 (function () {
-  var allowedRefs = ["reddit", "transfer-center", "seo", "x"];
+  var allowedRefs = ["reddit", "transfer-center", "seo", "x", "x-bio"];
   var ref = new URLSearchParams(window.location.search).get("ref");
   if (!ref || allowedRefs.indexOf(ref) === -1) return;
   var toolLinks = [
