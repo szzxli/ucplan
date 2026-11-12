@@ -157,6 +157,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .route-connector { align-self: center; width: 58px; height: 1px; flex: 0 0 58px; margin: 0 16px 2px 0; background: var(--line-strong); }
 
 main { width: min(var(--content), calc(100% - 56px)); margin: 0 auto; padding: 30px 0 74px; }
+.deadline-note {
+  margin: 0 0 22px;
+  padding: 16px 20px 14px;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--gold);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.deadline-note p { max-width: 850px; margin: 0 0 8px; color: var(--ink); }
+.deadline-note p:last-child { margin-bottom: 0; }
 .hero {
   position: relative;
   isolation: isolate;
