@@ -10,7 +10,7 @@
   // Internal hop links: carry ?ref= to the intermediate page (/transfer-os,
   // /uc-course) so its own ref.js can attach it to the tool link.
   // Without this, ref is lost when a visitor goes home -> tool page -> tool.
-  var internalLinks = ["/transfer-os", "/uc-course"];
+  var internalLinks = ["/transfer-os", "/uc-course", "/uc-transfer-deadline"];
   document.querySelectorAll("a[href]").forEach(function (link) {
     var href = link.getAttribute("href");
     if (!href) return;
