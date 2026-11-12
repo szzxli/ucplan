@@ -411,3 +411,8 @@ footer a:hover { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
+
+table.data{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;margin:14px 0}
+table.data th,table.data td{border:1px solid var(--line-strong);padding:8px 10px;text-align:left;vertical-align:top}
+table.data th{background:var(--surface-soft)}
+table.data td:first-child{white-space:nowrap}
