@@ -416,3 +416,42 @@ table.data{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;m
 table.data th,table.data td{border:1px solid var(--line-strong);padding:8px 10px;text-align:left;vertical-align:top}
 table.data th{background:var(--surface-soft)}
 table.data td:first-child{white-space:nowrap}
+
+/* coverage lookup, data tables, lists */
+.hint { color: var(--muted); font-size: 14px; }
+.cov-section { padding-bottom: 6px; }
+.cov-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 10px; }
+.cov-form label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 600; color: var(--green-deep); }
+.cov-form select, .cov-form input {
+  width: 100%; min-height: 46px; padding: 8px 12px; border: 1px solid var(--line-strong);
+  border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; font-size: 16px;
+}
+.cov-form select:focus-visible, .cov-form input:focus-visible { outline: 3px solid var(--green-soft); border-color: var(--green); }
+.cov-out { min-height: 24px; margin: 6px 0 18px; }
+.cov-out h4 { margin: 14px 0 4px; }
+.cov-list { margin: 4px 0 10px; padding-left: 20px; }
+.cov-list li { margin: 4px 0; overflow-wrap: anywhere; }
+.cov-yes { color: var(--green); font-weight: 600; }
+.cov-no { color: var(--muted); }
+.tbl-wrap { max-width: 100%; }
+table.years-table td:first-child { white-space: normal; }
+.tbl-wrap table.data { table-layout: auto; }
+ul.cols { columns: 3 220px; column-gap: 28px; padding-left: 18px; }
+ul.cols li { break-inside: avoid; margin: 3px 0; }
+ul.majs { padding-left: 18px; columns: 2 320px; column-gap: 28px; }
+ul.majs li { break-inside: avoid; margin: 3px 0; overflow-wrap: anywhere; }
+.inline-list { margin: 4px 0 14px; }
+.inline-list summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--green-deep); }
+.inline-list h4 { margin: 12px 0 4px; }
+.one-card { grid-template-columns: 1fr; }
+.pro-quiet { opacity: 1; border-top: 1px solid var(--line); margin-top: 26px; padding-top: 6px; }
+.pro-quiet h2 { font-size: 20px; }
+.pro-quiet p { color: var(--muted); font-size: 15px; }
+.pro-quiet .btn { margin: 3px 6px 6px 0; }
+@media (max-width: 600px) {
+  .cov-form { grid-template-columns: 1fr; }
+  table.data { font-size: 13px; }
+  table.data th, table.data td { padding: 7px 6px; }
+  ul.cols, ul.majs { columns: 1; }
+  .btn { max-width: 100%; text-align: center; }
+}

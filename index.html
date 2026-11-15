@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UCPlan — Free California Community College to UC Transfer Planning</title>
-<meta name="description" content="UCPlan offers two free tools that help California community college students plan their transfer to UC: Transfer-OS for the whole path, and UC Course Planner for semester-by-semester courses.">
+<meta name="description" content="Free tools for California community college students planning their transfer to UC: Transfer-OS for the whole path and, after you transfer, UC Course Planner.">
 <link rel="canonical" href="https://ucplan.org/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UCPlan">
 <meta property="og:title" content="UCPlan — Free California Community College to UC Transfer Planning">
-<meta property="og:description" content="UCPlan offers two free tools that help California community college students plan their transfer to UC: Transfer-OS for the whole path, and UC Course Planner for semester-by-semester courses.">
+<meta property="og:description" content="Free tools for California community college students planning their transfer to UC: Transfer-OS for the whole path and, after you transfer, UC Course Planner.">
 <meta property="og:url" content="https://ucplan.org/">
 <meta name="twitter:card" content="summary">
 <link rel="manifest" href="manifest.webmanifest">
@@ -22,7 +22,8 @@
   <a class="brand" href="/"><img src="logo.svg" alt="UCPlan" class="brand-logo"></a>
   <nav>
     <a href="/transfer-os" data-i18n="nav.transfer">Transfer-OS</a>
-    <a href="/uc-course" data-i18n="nav.course">UC Course Planner</a>
+    <a href="#coverage" data-i18n="nav.coverage">Coverage</a>
+    <a href="/uc-course" data-i18n="nav.after">After you transfer</a>
     <a href="#faq" data-i18n="nav.faq">FAQ</a>
     <a href="#support" data-i18n="nav.support">Support</a>
     <div class="lang">
@@ -41,7 +42,7 @@
 <nav class="route-track" aria-label="Planning sequence">
   <a class="route-step" href="/transfer-os"><span class="step-no" aria-hidden="true">01</span><span data-i18n="nav.transfer">Transfer-OS</span></a>
   <span class="route-connector" aria-hidden="true"></span>
-  <a class="route-step" href="/uc-course"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.course">UC Course Planner</span></a>
+  <a class="route-step" href="/uc-course"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.after">After you transfer</span></a>
 </nav>
 <main>
   <aside class="deadline-note">
@@ -51,11 +52,46 @@
   </aside>
   <section class="hero home-hero">
     <h1 data-i18n="index.hero.title">Plan your path from community college to UC.</h1>
-    <p data-i18n="index.hero.sub">Two free tools. One plan. Built on public ASSIST data — not affiliated with UC or ASSIST.</p>
+    <p data-i18n="index.hero.sub">Free tools built on public ASSIST data — not affiliated with UC or ASSIST.</p>
     <div class="cta-row">
       <a class="btn" href="/transfer-os" data-i18n="index.cta.transfer">Start with Transfer-OS</a>
-      <a class="btn secondary" href="/uc-course" data-i18n="index.cta.course">Plan courses with UC Course Planner</a>
+      <a class="btn secondary" href="#coverage" data-i18n="index.cta.coverage">Is my college + major covered?</a>
     </div>
+  </section>
+
+  <section id="coverage" class="cov-section">
+    <h2 data-i18n="index.cov.title">Is my college + major covered?</h2>
+    <p data-i18n="index.cov.sub">Pick your community college and type a major. This reads the same ASSIST data the tool uses, so what you see here is what Transfer-OS can compare.</p>
+    <form class="cov-form" id="covForm" onsubmit="return false">
+      <div>
+        <label for="covCollege" data-i18n="index.cov.cc">Community college</label>
+        <select id="covCollege"><option value="" data-i18n="index.cov.cc.ph">Choose your college…</option></select>
+      </div>
+      <div>
+        <label for="covMajor" data-i18n="index.cov.major">Major (try a short word, such as “computer”, “econ” or “psych”)</label>
+        <input id="covMajor" type="search" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
+      </div>
+    </form>
+    <div id="covOut" class="cov-out" aria-live="polite"><p class="hint" data-i18n="index.cov.pick">Choose a college to see which UC majors have agreement data for it.</p></div>
+    <h3 data-i18n="index.cov.years.title">How fresh is the data? Data year per UC</h3>
+    <div class="tbl-wrap">
+      <table class="data years-table">
+        <thead><tr><th data-i18n="index.cov.th.uc">UC campus</th><th data-i18n="index.cov.th.year">Data year (colleges with data)</th><th data-i18n="index.cov.th.n">Majors</th></tr></thead>
+        <tbody>
+<!-- GEN:YEARS -->
+<tr><td>UC Berkeley</td><td>2026–2027: 50 / 50</td><td>14</td></tr>
+<tr><td>UC Davis</td><td>2025–2026: 50 / 50</td><td>20</td></tr>
+<tr><td>UC Irvine</td><td>2025–2026: 50 / 50<br>2026–2027: 50 / 50</td><td>11</td></tr>
+<tr><td>UC San Diego</td><td>2026–2027: 50 / 50</td><td>27</td></tr>
+<tr><td>UC Santa Cruz</td><td>2026–2027: 50 / 50</td><td>19</td></tr>
+<tr><td>UCLA</td><td>2025–2026: 50 / 50<br>2026–2027: 30 / 50</td><td>17</td></tr>
+<!-- /GEN:YEARS -->
+        </tbody>
+      </table>
+    </div>
+    <p class="hint" data-i18n="index.cov.years.note">ASSIST publishes agreements by academic year. UCLA and UC Irvine have two years; the year is shown on every Transfer-OS result. Data pulled from ASSIST on November 2, 2026.</p>
+    <p class="hint" data-i18n="index.cov.note">Not listed here does not mean you cannot transfer — it means we have no agreement data for it. ASSIST (assist.org) is the official source.</p>
+    <p><a href="/coverage" data-i18n="index.cov.link">See all 50 colleges and 108 UC majors →</a></p>
   </section>
 
   <section>
@@ -80,18 +116,61 @@
   </section>
 
   <section>
-    <h2 data-i18n="index.tools.title">Two tools, one plan</h2>
-    <div class="cards tool-cards">
+    <h2 data-i18n="index.tools.title">Your transfer tool</h2>
+    <div class="cards tool-cards one-card">
       <article class="card">
         <h3 data-i18n="index.card.t.title">Transfer-OS</h3>
         <p data-i18n="index.card.t.desc">See the whole path. Pick your community college, your target UC, and your major — see what transfers and what is still missing.</p>
-        <p data-i18n="index.card.t.cover">Covers 50 California community colleges × 6 UC campuses.</p>
+        <p data-i18n="index.card.t.cover">Covers 50 California community colleges × 6 UC campuses, 108 UC majors. The data year is shown above and on every result.</p>
         <p><a href="/transfer-os" data-i18n="index.card.t.about">About Transfer-OS →</a> · <a href="https://szzxli.github.io/transfer-os/mobile/www/" data-i18n="index.card.t.open">Open the tool →</a></p>
       </article>
+    </div>
+  </section>
+
+  <section id="after">
+    <h2 data-i18n="index.after.title">After you transfer</h2>
+    <p data-i18n="index.after.p">UC Course Planner is for students who are already at a UC. It plans your remaining semesters against your graduation requirements (its first question is whether you are aiming for grad school or a job). It is not a transfer tool.</p>
+    <div class="cards tool-cards one-card">
       <article class="card">
         <h3 data-i18n="index.card.c.title">UC Course Planner</h3>
-        <p data-i18n="index.card.c.desc">Plan semester by semester. Which courses to take, in what order, with prerequisites and general education lined up.</p>
-        <p data-i18n="index.card.c.cover">Programs at UC Irvine, UC San Diego, and UC Santa Barbara.</p>
+        <p data-i18n="index.card.c.desc">Graduation planning for students already at UC: courses in order, with prerequisites and general education lined up.</p>
+        <p data-i18n="index.card.c.cover">Only UC Irvine, UC San Diego and UC Santa Barbara — 22 majors in total. Business, chemistry, history and other majors are not covered yet.</p>
+        <details class="inline-list">
+          <summary data-i18n="index.after.list">See the 22 majors</summary>
+<!-- GEN:UCC -->
+<h4>UC Irvine (6)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biological Sciences <span class="hint">B.S.</span></li>
+<li>Psychology <span class="hint">B.A.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+</ul>
+<h4>UC San Diego (8)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biology <span class="hint">B.S.</span></li>
+<li>Psychology <span class="hint">B.A.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+<li>Mathematics-Computer Science <span class="hint">B.S.</span></li>
+<li>Artificial Intelligence <span class="hint">B.S.</span></li>
+</ul>
+<h4>UC Santa Barbara (8)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biological Sciences <span class="hint">B.S.</span></li>
+<li>Psychological &amp; Brain Sciences <span class="hint">B.S.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+<li>Environmental Studies <span class="hint">B.S.</span></li>
+<li>Artificial Intelligence <span class="hint">B.S.</span></li>
+</ul>
+<!-- /GEN:UCC -->
+        </details>
         <p><a href="/uc-course" data-i18n="index.card.c.about">About UC Course Planner →</a> · <a href="https://szzxli.github.io/UC-Course/web/" data-i18n="index.card.c.open">Open the tool →</a></p>
       </article>
     </div>
@@ -102,15 +181,20 @@
     <ol class="steps">
       <li data-i18n="index.how.1">Pick your starting point: your community college, your target UC, your major.</li>
       <li data-i18n="index.how.2">See your path in Transfer-OS — what transfers, what is missing.</li>
-      <li data-i18n="index.how.3">Plan your semesters in UC Course Planner — courses in order, prerequisites respected.</li>
+      <li data-i18n="index.how.3">After you transfer: plan your remaining semesters in UC Course Planner (for students already at a UC).</li>
     </ol>
     <p data-i18n="index.data.note">The two tools do not share data yet. Enter your college, target UC, and major in each tool separately.</p>
   </section>
 
-  <section>
-    <h2 data-i18n="index.pro.title">Free now, Pro later — only for new features</h2>
-    <p data-i18n="index.pro.p1">The tools you see today stay free. A Pro plan later will add only new features: TAG tracking, deadline reminders, comparing multiple plans, application-season checklists, and progress export. One account and one payment will unlock Pro in both tools. No prices yet — Pro will be announced when it is ready.</p>
-    <p data-i18n="index.pro.p2">Public ASSIST data itself is never charged for.</p>
+  <section id="updates">
+    <h2 data-i18n="index.upd.title">How we update the data</h2>
+    <ul>
+      <li data-i18n="index.upd.1">Source: public ASSIST articulation agreements (assist.org). No private data.</li>
+      <li data-i18n="index.upd.2">Refreshed when ASSIST publishes a new academic year. The data in the tools was pulled from ASSIST on November 2, 2026.</li>
+      <li data-i18n="index.upd.3">Before each release we compare the new data with the previous release (colleges, majors and data years added or removed) and spot-check sample reports against ASSIST.</li>
+    </ul>
+    <p><span data-i18n="index.upd.4">Found a mistake? Please tell us:</span> <a href="https://github.com/szzxli/ucplan/issues" data-i18n="index.upd.report">Report a data error on GitHub (free GitHub account needed)</a> <span data-i18n="index.upd.mail">or email info@ucplan.org</span></p>
+    <p><a href="https://github.com/szzxli/transfer-os/blob/main/UPDATING.md" data-i18n="index.upd.how">Read our update checklist →</a></p>
   </section>
 
   <section id="faq">
@@ -138,24 +222,58 @@
     </details>
     <details>
       <summary data-i18n="index.faq.q6">Which colleges are covered?</summary>
-      <p data-i18n="index.faq.a6">Transfer-OS covers 50 California community colleges × 6 UC campuses. UC Course Planner covers programs at UC Irvine, UC San Diego, and UC Santa Barbara, and coverage keeps growing.</p>
+      <p data-i18n="index.faq.a6">Transfer-OS covers 50 California community colleges × 6 UC campuses (UC Berkeley, UCLA, UC San Diego, UC Davis, UC Irvine, UC Santa Cruz) and 108 UC majors; the full lists are on the coverage page. UC Course Planner is for students already at UC and covers only UC Irvine, UC San Diego and UC Santa Barbara (22 majors).</p>
     </details>
+    <details>
+      <summary data-i18n="index.faq.q7">Do I need IGETC or Cal-GETC to transfer to UC?</summary>
+      <p data-i18n="index.faq.a7">No. Neither is an admission requirement. UC asks for a seven-course pattern by the end of the spring term before you transfer: two English composition courses, one math or quantitative reasoning course, and four courses from at least two of arts and humanities, social and behavioral sciences, and physical and biological sciences — all UC-transferable. You also need 60 semester units and a 2.4 GPA in UC-transferable courses (2.8 if you are a nonresident). If you finish IGETC or Cal-GETC you may already have met the seven-course pattern, and some majors recommend it, so check ASSIST and your transfer center.</p>
+      <p><a data-i18n="index.faq.a7link" href="https://admission.universityofcalifornia.edu/admission-requirements/transfer-requirements/preparing-to-transfer/basic-requirements.html">UC Admissions: basic requirements and the seven-course pattern</a></p>
+    </details>
+    <details>
+      <summary data-i18n="index.faq.q8">How much is the UC application? Is there a fee waiver?</summary>
+      <p data-i18n="index.faq.a8">$80 per UC campus ($95 for international and non-immigrant applicants). UC waives the fee for up to four campuses for eligible U.S. citizens, permanent residents and AB 540 students; the application tells you whether you qualify once you enter family size and income. Fees are not refundable.</p>
+      <p><a data-i18n="index.faq.a8link" href="https://admission.universityofcalifornia.edu/apply-now.html">UC Admissions: application fees and waivers</a></p>
+    </details>
+    <details>
+      <summary data-i18n="index.faq.q9">What about financial aid (FAFSA or Dream Act)?</summary>
+      <p data-i18n="index.faq.a9">File the 2027–28 FAFSA, or the California Dream Act Application if you are an undocumented student, between October 1, 2026 and March 2, 2027. California residents (and AB 540 students) also need a Cal Grant GPA verification; California community colleges usually submit it for you, but check with your school.</p>
+      <p><a data-i18n="index.faq.a9link" href="https://admission.universityofcalifornia.edu/tuition-financial-aid/apply-for-financial-aid/">UC Admissions: dates and deadlines</a></p>
+    </details>
+    <details>
+      <summary data-i18n="index.faq.q10">Can I transfer in winter or spring?</summary>
+      <p data-i18n="index.faq.a10">Most UC campuses admit transfer students for fall only. Select campuses accept winter/spring applications in a July filing period (July 1–31 for winter/spring 2027). Not every campus or major is open, so check the campus before you apply. TAG for winter/spring has its own filing period, May 1–31.</p>
+      <p><a data-i18n="index.faq.a10link" href="https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-transfer/dates-and-deadlines.html">UC Admissions: dates and deadlines</a></p>
+    </details>
+    <details>
+      <summary data-i18n="index.faq.q11">Who should I talk to about my own plan?</summary>
+      <p data-i18n="index.faq.a11">Your community college transfer center or counselor. They know your college’s ASSIST agreements and deadlines, and they can review your plan with you. UCPlan does not give personal transfer advising.</p>
+    </details>
+  </section>
+
+  <section class="pro-quiet">
+    <h2 data-i18n="index.pro.title">Pro, later — new features only</h2>
+    <p data-i18n="index.pro.p1">The tools you see today stay free. A Pro plan later will add only new features: TAG tracking, deadline reminders, comparing multiple plans, application-season checklists, and progress export. One account and one payment will unlock Pro in both tools. No prices yet — Pro will be announced when it is ready.</p>
+    <p data-i18n="index.pro.p2">Public ASSIST data itself is never charged for.</p>
+    <p data-i18n="index.pro.wait">Want Pro when it exists? Email info@ucplan.org with the subject “Pro waitlist” — no payment and no account needed. Or tell us what you would want on GitHub (needs a free GitHub account).</p>
+    <p><a class="btn secondary" href="mailto:info@ucplan.org?subject=Pro%20waitlist" data-i18n="index.pro.mail">Email to join the Pro waitlist</a> <a class="btn secondary" href="https://github.com/szzxli/ucplan/issues/new?title=Pro%20request" data-i18n="index.pro.gh">Request on GitHub</a></p>
   </section>
 
   <section id="support">
     <h2 data-i18n="index.sup.title">Support</h2>
-    <p data-i18n="index.sup.p1">Having a problem with the tools — a page that will not load, a button that does not work, data that looks wrong? Tell us on GitHub:</p>
+    <p data-i18n="index.sup.p1">Having a problem with the tools — a page that will not load, a button that does not work, data that looks wrong? Open an issue on GitHub (a free GitHub account is needed):</p>
     <p><a class="btn" href="https://github.com/szzxli/ucplan/issues" data-i18n="index.sup.btn">Report an issue on GitHub</a></p>
-    <p data-i18n="index.sup.p2">Email support: info@ucplan.org. Support covers tool problems only — it does not include personal transfer advising. For questions about your own transfer plan, please check with your college transfer center or a UC admissions counselor.</p>
+    <p data-i18n="index.sup.p2">No GitHub account? Email info@ucplan.org. UCPlan is a small independent project by David Lee, so there is no guaranteed reply time. Support covers tool problems only — not personal transfer advising: for that, talk to your college transfer center or a UC admissions counselor.</p>
+    <p class="hint"><span data-i18n="index.updated">Updated</span>: <time datetime="2026-11-15">2026-11-15</time></p>
   </section>
 </main>
 <footer>
   <p data-i18n="footer.disclaimer">UCPlan is an independent project. Not affiliated with the University of California or ASSIST. Nothing on this site guarantees admission.</p>
   <p data-i18n="footer.privacy">Privacy: page views are counted with GoatCounter, a cookie-free counter; no personal data is collected. An allow-listed referral tag (?ref=reddit, transfer-center, seo, x, or x-bio) is included in the counted page path.</p>
-  <p><a href="/" data-i18n="footer.home">Home</a> · <a href="/transfer-os" data-i18n="footer.transfer">Transfer-OS</a> · <a href="/uc-course" data-i18n="footer.course">UC Course Planner</a></p>
+  <p><a href="/" data-i18n="footer.home">Home</a> · <a href="/transfer-os" data-i18n="footer.transfer">Transfer-OS</a> · <a href="/coverage" data-i18n="footer.coverage">Coverage</a> · <a href="/uc-course" data-i18n="footer.course">UC Course Planner</a></p>
 </footer>
 <script src="app.js"></script>
 <script src="i18n.js"></script>
+<script src="coverage.js" defer></script>
   <script src="ref.js" defer></script>
 <!-- Privacy-friendly GoatCounter page-view counter; no personal data. -->
   <script>/* GoatCounter loader: test visits are never counted. ?nocount=1 turns counting off in this browser (localStorage skipgc=t, GoatCounter's own flag; ?nocount=0 turns it back on); URLs with v=, cb=, cachebust, _= or nocount are skipped too. Allow-list below must match ref.js. */

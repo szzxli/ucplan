@@ -9,6 +9,63 @@
   ];
   var KEY = 'ucplan.lang';
   var cache = {};
+  var stats = null;      // numbers read from coverage.json + ucc-majors.json (the same data the tools use)
+  var current = 'en';
+  var statsReq = null;
+
+  // First visit: follow the browser language, English when we have no match. A saved choice always wins.
+  function detect() {
+    var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) {
+      var l = String(list[i] || '').toLowerCase();
+      if (l.indexOf('zh') === 0) {
+        return (/hant|-tw|-hk|-mo/.test(l)) ? 'zh-TW' : 'zh-CN';
+      }
+      if (l.indexOf('es') === 0) { return 'es'; }
+      if (l.indexOf('ko') === 0) { return 'ko'; }
+      if (l.indexOf('ja') === 0) { return 'ja'; }
+      if (l.indexOf('en') === 0) { return 'en'; }
+    }
+    return 'en';
+  }
+
+  function loadStats() {
+    if (statsReq) { return statsReq; }
+    statsReq = Promise.all([
+      fetch('/coverage.json').then(function (r) { return r.json(); }),
+      fetch('/ucc-majors.json').then(function (r) { return r.json(); })
+    ]).then(function (res) {
+      var cov = res[0], ucc = res[1];
+      stats = {
+        colleges: cov.counts.colleges, ucs: cov.counts.ucs, majors: cov.counts.uc_majors,
+        ucmajors: ucc.count, uccampuses: ucc.campuses.length, assistdate: cov.assist_pulled
+      };
+      window.UCPLAN_COVERAGE = cov;
+      return stats;
+    }).catch(function () { stats = null; return null; });
+    return statsReq;
+  }
+
+  function fmtDate(iso, code) {
+    try {
+      var d = new Date(iso + 'T00:00:00Z');
+      return d.toLocaleDateString(code, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+    } catch (e) { return iso; }
+  }
+
+  function fill(str, vars) {
+    return str.replace(/\{([a-z]+)\}/g, function (m, k) {
+      return (vars && vars[k] !== undefined) ? String(vars[k]) : m;
+    });
+  }
+
+  function statVars(code) {
+    if (!stats) { return null; }
+    var v = {};
+    for (var k in stats) { if (Object.prototype.hasOwnProperty.call(stats, k)) { v[k] = stats[k]; } }
+    v.assistdate = fmtDate(stats.assistdate, code);
+    return v;
+  }
 
   function langName(code) {
     for (var i = 0; i < LANGS.length; i++) {
@@ -24,11 +81,29 @@
     return false;
   }
 
-  function apply(dict) {
+  // t('key', {vars}) for scripts (coverage.js) that build text at runtime.
+  window.UCPLAN_I18N = {
+    t: function (key, vars) {
+      var d = cache[current] || cache.en || {};
+      var v = d[key];
+      if (typeof v !== 'string') { v = (cache.en || {})[key] || key; }
+      return fill(v, vars);
+    },
+    lang: function () { return current; }
+  };
+
+  function apply(dict, code) {
+    var sv = statVars(code);
     var els = document.querySelectorAll('[data-i18n]');
     for (var i = 0; i < els.length; i++) {
       var v = dict[els[i].getAttribute('data-i18n')];
-      if (typeof v === 'string') { els[i].textContent = v; }
+      if (typeof v !== 'string') { continue; }
+      if (/\{[a-z]+\}/.test(v)) {
+        v = fill(v, sv);
+        // numbers not available (offline or fetch failed): keep the static English text already on the page
+        if (/\{(colleges|ucs|majors|ucmajors|uccampuses|assistdate)\}/.test(v)) { continue; }
+      }
+      els[i].textContent = v;
     }
     var page = document.documentElement.getAttribute('data-page');
     if (page) {
@@ -40,24 +115,31 @@
 
   function load(code, done) {
     if (cache[code]) { done(cache[code]); return; }
-    fetch('lang/' + code + '.json').then(function (r) { return r.json(); }).then(function (d) {
-      cache[code] = d;
-      done(d);
+    Promise.all([
+      fetch('/lang/' + code + '.json').then(function (r) { return r.json(); }),
+      cache.en ? Promise.resolve(cache.en) : fetch('/lang/en.json').then(function (r) { return r.json(); }),
+      loadStats()
+    ]).then(function (res) {
+      cache[code] = res[0];
+      if (!cache.en) { cache.en = res[1]; }
+      done(res[0]);
     }).catch(function () { /* keep current language on failure */ });
   }
 
-  function setLang(code) {
+  function setLang(code, remember) {
     if (!isKnown(code)) { code = 'en'; }
-    try { localStorage.setItem(KEY, code); } catch (e) { /* private mode */ }
+    if (remember !== false) {
+      try { localStorage.setItem(KEY, code); } catch (e) { /* private mode */ }
+    }
     document.documentElement.setAttribute('lang', code);
     var btn = document.getElementById('langBtn');
     if (btn) { btn.textContent = langName(code); }
     closeList();
-    if (code === 'en') {
-      load('en', apply);
-    } else {
-      load(code, apply);
-    }
+    current = code;
+    load(code, function (d) {
+      apply(d, code);
+      document.dispatchEvent(new CustomEvent('ucplan:lang', { detail: { lang: code } }));
+    });
   }
 
   function closeList() {
@@ -85,7 +167,7 @@
       var items = list.querySelectorAll('[data-lang]');
       for (var i = 0; i < items.length; i++) {
         items[i].addEventListener('click', function (e) {
-          setLang(e.target.getAttribute('data-lang'));
+          setLang(e.target.getAttribute('data-lang'), true);
         });
       }
       document.addEventListener('click', function (e) {
@@ -97,9 +179,10 @@
     }
     var stored = null;
     try { stored = localStorage.getItem(KEY); } catch (e) { stored = null; }
-    if (stored && isKnown(stored)) {
-      if (btn) { btn.textContent = langName(stored); }
-      if (stored !== 'en') { setLang(stored); }
-    }
+    // saved choice wins; otherwise the browser language; otherwise English
+    var start = (stored && isKnown(stored)) ? stored : (document.querySelector('[data-i18n]') ? detect() : 'en');
+    if (btn) { btn.textContent = langName(start); }
+    // English also loads the dictionary so tokens and runtime text are ready
+    setLang(start, !!(stored && isKnown(stored)));
   });
 })();
