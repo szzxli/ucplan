@@ -416,3 +416,22 @@ table.data{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;m
 table.data th,table.data td{border:1px solid var(--line-strong);padding:8px 10px;text-align:left;vertical-align:top}
 table.data th{background:var(--surface-soft)}
 table.data td:first-child{white-space:nowrap}
+
+/* UC Course Planner positioning: campus/major lists, single-card rows */
+.hint { color: var(--muted); font-size: 14px; }
+.one-card { grid-template-columns: 1fr; }
+.inline-list { margin: 4px 0 14px; }
+.inline-list summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--green-deep); }
+.inline-list h4, .ucc-list h4 { margin: 14px 0 4px; }
+ul.majs { padding-left: 18px; columns: 2 320px; column-gap: 28px; }
+ul.majs li { break-inside: avoid; margin: 3px 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  ul.majs { columns: 1; }
+  .btn { max-width: 100%; text-align: center; }
+}
+.brand { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 600px) {
+  table.data { table-layout: fixed; font-size: 13px; }
+  table.data th, table.data td { padding: 7px 6px; overflow-wrap: anywhere; word-break: normal; }
+  table.data td:first-child { white-space: normal; }
+}

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UC Course Planner — Plan Semester by Semester | UCPlan</title>
-<meta name="description" content="UC Course Planner turns your transfer path into a semester-by-semester course plan, with prerequisites and general education lined up.">
+<title>UC Course Planner — Graduation Planning for Students Already at UC | UCPlan</title>
+<meta name="description" content="UC Course Planner plans the remaining semesters toward graduation for students already at UC Irvine, UC San Diego or UC Santa Barbara.">
 <link rel="canonical" href="https://ucplan.org/uc-course">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UCPlan">
-<meta property="og:title" content="UC Course Planner — Plan Semester by Semester | UCPlan">
-<meta property="og:description" content="UC Course Planner turns your transfer path into a semester-by-semester course plan, with prerequisites and general education lined up.">
+<meta property="og:title" content="UC Course Planner — Graduation Planning for Students Already at UC | UCPlan">
+<meta property="og:description" content="UC Course Planner plans the remaining semesters toward graduation for students already at UC Irvine, UC San Diego or UC Santa Barbara.">
 <meta property="og:url" content="https://ucplan.org/uc-course">
 <meta name="twitter:card" content="summary">
 <link rel="manifest" href="manifest.webmanifest">
@@ -22,7 +22,7 @@
   <a class="brand" href="/"><img src="logo.svg" alt="UCPlan" class="brand-logo"></a>
   <nav>
     <a href="/transfer-os" data-i18n="nav.transfer">Transfer-OS</a>
-    <a href="/uc-course" aria-current="page" data-i18n="nav.course">UC Course Planner</a>
+    <a href="/uc-course" aria-current="page" data-i18n="nav.after">After you transfer</a>
     <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     <a href="/#support" data-i18n="nav.support">Support</a>
     <div class="lang">
@@ -41,15 +41,58 @@
 <nav class="route-track" aria-label="Planning sequence">
   <a class="route-step is-complete" href="/transfer-os"><span class="step-no" aria-hidden="true">01</span><span data-i18n="nav.transfer">Transfer-OS</span></a>
   <span class="route-connector" aria-hidden="true"></span>
-  <a class="route-step" href="/uc-course" aria-current="step"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.course">UC Course Planner</span></a>
+  <a class="route-step" href="/uc-course" aria-current="step"><span class="step-no" aria-hidden="true">02</span><span data-i18n="nav.after">After you transfer</span></a>
 </nav>
 <main>
   <section class="hero subpage-hero">
-    <h1 data-i18n="cuc.hero.title">UC Course Planner: plan semester by semester.</h1>
-    <p data-i18n="cuc.hero.sub">Your transfer path, turned into actual courses in order — prerequisites respected, general education and major requirements lined up.</p>
+    <h1 data-i18n="cuc.hero.title">UC Course Planner: graduation planning for students already at UC.</h1>
+    <p data-i18n="cuc.hero.sub">Plan the semesters you have left toward your degree — prerequisites respected, general education and major requirements lined up.</p>
     <div class="cta-row">
       <a class="btn" href="https://szzxli.github.io/UC-Course/web/" data-i18n="cuc.cta.open">Open UC Course Planner</a>
-      <a class="btn secondary" href="/transfer-os" data-i18n="cuc.cta.transfer">← See the whole path first</a>
+      <a class="btn secondary" href="/transfer-os" data-i18n="cuc.cta.transfer">← Transfer-OS (before you transfer)</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="cuc.who.title">Who it is for</h2>
+    <p data-i18n="cuc.who.p">Students who are already at UC Irvine, UC San Diego or UC Santa Barbara. Its first question is whether you are aiming for grad school or a job; then it plans your semesters against your graduation requirements. It is not a transfer planner — if you are still at a community college, start with Transfer-OS.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="cuc.cover.title">What it covers</h2>
+    <p data-i18n="cuc.cover.p">3 campuses and 22 majors, listed below. Business, chemistry, history and other majors are not covered yet.</p>
+    <div class="ucc-list">
+<h4>UC Irvine (6)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biological Sciences <span class="hint">B.S.</span></li>
+<li>Psychology <span class="hint">B.A.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+</ul>
+<h4>UC San Diego (8)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biology <span class="hint">B.S.</span></li>
+<li>Psychology <span class="hint">B.A.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+<li>Mathematics-Computer Science <span class="hint">B.S.</span></li>
+<li>Artificial Intelligence <span class="hint">B.S.</span></li>
+</ul>
+<h4>UC Santa Barbara (8)</h4>
+<ul class="majs">
+<li>Computer Science <span class="hint">B.S.</span></li>
+<li>Electrical Engineering <span class="hint">B.S.</span></li>
+<li>Biological Sciences <span class="hint">B.S.</span></li>
+<li>Psychological &amp; Brain Sciences <span class="hint">B.S.</span></li>
+<li>Economics <span class="hint">B.A.</span></li>
+<li>Mathematics <span class="hint">B.S.</span></li>
+<li>Environmental Studies <span class="hint">B.S.</span></li>
+<li>Artificial Intelligence <span class="hint">B.S.</span></li>
+</ul>
     </div>
   </section>
 
@@ -59,13 +102,13 @@
       <li data-i18n="cuc.what.1">A semester-by-semester course plan for your major.</li>
       <li data-i18n="cuc.what.2">Prerequisite order, so you never plan a course before you are ready for it.</li>
       <li data-i18n="cuc.what.3">General education and major requirements shown together, not in separate lists.</li>
-      <li data-i18n="cuc.what.4">Programs at UC Irvine, UC San Diego, and UC Santa Barbara, with more on the way.</li>
+      <li data-i18n="cuc.what.4">Your plan is saved only in this browser.</li>
     </ul>
   </section>
 
   <section>
     <h2 data-i18n="cuc.fit.title">How it fits with Transfer-OS</h2>
-    <p data-i18n="cuc.fit.p">Transfer-OS answers “where am I going, and what is missing?” UC Course Planner answers “what do I take, and when?” Use them in that order: path first, semesters second.</p>
+    <p data-i18n="cuc.fit.p">Transfer-OS is for the years before you transfer; UC Course Planner is for the years after. If you are at a community college, start with Transfer-OS.</p>
   </section>
 
   <section>

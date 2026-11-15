@@ -10,6 +10,21 @@
   var KEY = 'ucplan.lang';
   var cache = {};
 
+  // First visit: follow the browser language, English when there is no match.
+  // A saved choice (the language button) always wins.
+  function detect() {
+    var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) {
+      var l = String(list[i] || '').toLowerCase();
+      if (l.indexOf('zh') === 0) { return (/hant|-tw|-hk|-mo/.test(l)) ? 'zh-TW' : 'zh-CN'; }
+      if (l.indexOf('es') === 0) { return 'es'; }
+      if (l.indexOf('ko') === 0) { return 'ko'; }
+      if (l.indexOf('ja') === 0) { return 'ja'; }
+      if (l.indexOf('en') === 0) { return 'en'; }
+    }
+    return 'en';
+  }
+
   function langName(code) {
     for (var i = 0; i < LANGS.length; i++) {
       if (LANGS[i].code === code) { return LANGS[i].name; }
@@ -46,9 +61,11 @@
     }).catch(function () { /* keep current language on failure */ });
   }
 
-  function setLang(code) {
+  function setLang(code, remember) {
     if (!isKnown(code)) { code = 'en'; }
-    try { localStorage.setItem(KEY, code); } catch (e) { /* private mode */ }
+    if (remember !== false) {
+      try { localStorage.setItem(KEY, code); } catch (e) { /* private mode */ }
+    }
     document.documentElement.setAttribute('lang', code);
     var btn = document.getElementById('langBtn');
     if (btn) { btn.textContent = langName(code); }
@@ -97,9 +114,10 @@
     }
     var stored = null;
     try { stored = localStorage.getItem(KEY); } catch (e) { stored = null; }
-    if (stored && isKnown(stored)) {
-      if (btn) { btn.textContent = langName(stored); }
-      if (stored !== 'en') { setLang(stored); }
-    }
+    var saved = !!(stored && isKnown(stored));
+    // pages with no translated text (static SEO pages) stay English
+    var start = saved ? stored : (document.querySelector('[data-i18n^="index."],[data-i18n^="tos."],[data-i18n^="cuc."]') ? detect() : 'en');
+    if (btn) { btn.textContent = langName(start); }
+    if (start !== 'en') { setLang(start, saved); }
   });
 })();
