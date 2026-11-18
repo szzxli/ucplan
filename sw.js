@@ -1,4 +1,4 @@
-var CACHE = 'ucplan-v22';
+var CACHE = 'ucplan-v23';
 var FILES = ['/', '/transfer-os', '/uc-course', '/coverage', '/tag-not-approved', 'styles.css', 'app.js', 'i18n.js', 'coverage.js', 'coverage.json', 'ucc-majors.json', 'manifest.webmanifest', 'favicon.svg', 'logo.svg', 'lang/en.json', 'lang/es.json', 'lang/zh-CN.json', 'lang/zh-TW.json', 'lang/ko.json', 'lang/ja.json'];
 self.addEventListener('install', function (e) {
   self.skipWaiting();
