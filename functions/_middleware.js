@@ -12,6 +12,18 @@ export async function onRequest(context) {
   }
 
   var response = await context.next();
+  if (url.hostname !== "ucplan.org" && !response.headers.has("x-robots-tag")) {
+    // Preview deployments (*.ucplan.pages.dev) serve real pages with no
+    // canonical, so keep them out of search indexes. The production alias
+    // already redirected above; ucplan.org itself never hits this branch.
+    var previewHeaders = new Headers(response.headers);
+    previewHeaders.set("x-robots-tag", "noindex");
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: previewHeaders,
+    });
+  }
   if (response.status !== 404 || response.headers.has("x-robots-tag")) {
     return response;
   }
