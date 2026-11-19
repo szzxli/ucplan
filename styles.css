@@ -419,6 +419,27 @@ table.data td:first-child{white-space:nowrap}
 
 /* coverage lookup, data tables, lists */
 .hint { color: var(--muted); font-size: 14px; }
+.campus-pick { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.campus-pick button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--green-deep);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.campus-pick button[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fffefa; }
+.campus-pick button:focus-visible { outline: 3px solid var(--green-soft); outline-offset: 2px; }
+.campus-panel { margin: 22px 0 0; padding-top: 8px; scroll-margin-top: 16px; }
+.campus-panel h4 { margin: 18px 0 8px; font-size: 18px; }
+.campus-panel[hidden] { display: none; }
+@media (max-width: 600px) {
+  .campus-pick button { font-size: 13px; }
+}
 .cov-section { padding-bottom: 6px; }
 .cov-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 10px; }
 .cov-form label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 600; color: var(--green-deep); }

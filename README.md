@@ -22,7 +22,8 @@ this site only links out to them.
   (`ucplan.lang`). The homepage defaults to English until the visitor picks a language.
   On other translated pages, with no saved choice the browser language is used
   (zh-Hant/TW/HK → 繁體中文, other zh → 简体中文, es, ko, ja), else English. Page text is keyed with
-  `data-i18n`; every key must exist in every language file.
+  `data-i18n`; every key must exist in every language file. Translated pages use the
+  `index.`, `tos.`, `cuc.`, `cov.`, or `tna.` key prefix.
 
 Content rules (do not break these):
 
