@@ -43,6 +43,10 @@
   <section class="hero subpage-hero">
     <h1>UC transfer application deadline for fall 2027</h1>
     <p>The official filing window is October 1 through November 30, 2026. A TAG is not the UC application. Dates below are copied from UC Admissions pages, with links so you can check them yourself.</p>
+    <div class="cta-row">
+      <a class="btn" id="icsBtn" href="/uc-transfer-deadlines.ics" download data-i18n="deadline.ics.btn">Add to calendar (.ics)</a>
+    </div>
+    <p data-i18n="deadline.ics.note">Downloads a calendar file with the three dates above. Each date carries a reminder 3 days before, set inside the file. No sign-up.</p>
   </section>
 
   <section>
@@ -81,5 +85,18 @@
 <!-- Privacy-friendly GoatCounter page-view counter; no personal data. -->
   <script>/* GoatCounter loader: test visits are never counted. ?nocount=1 turns counting off in this browser (localStorage skipgc=t, GoatCounter's own flag; ?nocount=0 turns it back on); URLs with v=, cb=, cachebust, _= or nocount are skipped too. Allow-list below must match ref.js. */
     (function(w,d,l){var q=l.search,skip=/[?&](v|cb|_|nocount)=|[?&]cachebust/i.test(q);try{var s=w.localStorage;if(/[?&]nocount=1(&|$)/.test(q))s.setItem('skipgc','t');if(/[?&]nocount=0(&|$)/.test(q))s.removeItem('skipgc');if(s.getItem('skipgc')==='t')skip=true}catch(e){}w.gcSkip=skip;if(skip)return;w.goatcounter={path:function(p){var allowed=["reddit","transfer-center","seo","x","x-bio"];var ref=null;try{ref=new URLSearchParams(l.search).get("ref")}catch(e){}if(allowed.indexOf(ref)===-1)ref=null;return "/ucplan"+l.pathname+(ref?"?ref="+ref:"")}};var g=d.createElement('script');g.async=true;g.src='https://gc.zgo.at/count.js';g.setAttribute('data-goatcounter','https://szzxli.goatcounter.com/count');(d.head||d.documentElement).appendChild(g)})(window,document,location);</script>
+<script>
+/* "Add to calendar": counts a GoatCounter event (ics-download) on click. The .ics file itself carries the 3-day-before alarms; nothing is sent anywhere. */
+(function () {
+  var a = document.getElementById('icsBtn');
+  if (!a) { return; }
+  a.addEventListener('click', function () {
+    if (window.gcSkip) { return; }
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      window.goatcounter.count({ event: true, title: 'ics-download' });
+    }
+  });
+})();
+</script>
 </body>
 </html>
