@@ -1,0 +1,62 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UCPlan//UC Transfer Deadlines//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:UC Transfer Deadlines - Fall 2027
+X-WR-CALNAME:UC Transfer Deadlines - Fall 2027
+BEGIN:VEVENT
+UID:uc-app-deadline-20261130@ucplan.org
+DTSTAMP:20261120T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:UC application deadline - fall 2027
+DESCRIPTION:UC transfer applications for fall 2027 must be submitted by Nov
+ ember 30\, 2026. Source: https://admission.universityofcalifornia.edu/how-
+ to-apply/applying-as-a-transfer/dates-and-deadlines.html
+URL:https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a
+ -transfer/dates-and-deadlines.html
+BEGIN:VALARM
+TRIGGER:-P3D
+ACTION:DISPLAY
+DESCRIPTION:UC application deadline in 3 days - fall 2027
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uc-tau-opens-20261215@ucplan.org
+DTSTAMP:20261120T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Transfer Academic Update (TAU) opens - fall 2027
+DESCRIPTION:The Transfer Academic Update opens December 15\, 2026. Report f
+ inal fall grades and in-progress or planned coursework. Source: https://ad
+ mission.universityofcalifornia.edu/how-to-apply/applying-as-a-transfer/aft
+ er-you-apply/transfer-academic-update.html
+URL:https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a
+ -transfer/after-you-apply/transfer-academic-update.html
+BEGIN:VALARM
+TRIGGER:-P3D
+ACTION:DISPLAY
+DESCRIPTION:Transfer Academic Update (TAU) opens in 3 days - fall 2027
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:uc-tau-priority-20270131@ucplan.org
+DTSTAMP:20261120T000000Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:TAU priority deadline - fall 2027
+DESCRIPTION:Priority deadline for the Transfer Academic Update for fall 202
+ 7 is January 31\, 2027. Submit a complete TAU by this date so campuses hav
+ e your updated record when reviewing your application. Source: https://adm
+ ission.universityofcalifornia.edu/how-to-apply/applying-as-a-transfer/afte
+ r-you-apply/transfer-academic-update.html
+URL:https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a
+ -transfer/after-you-apply/transfer-academic-update.html
+BEGIN:VALARM
+TRIGGER:-P3D
+ACTION:DISPLAY
+DESCRIPTION:TAU priority deadline in 3 days - fall 2027
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,5 +1,5 @@
-var CACHE = 'ucplan-v24';
-var FILES = ['/', '/transfer-os', '/uc-course', '/coverage', '/counselors', '/tag-not-approved', 'styles.css', 'app.js', 'i18n.js', 'coverage.js', 'coverage.json', 'ucc-majors.json', 'manifest.webmanifest', 'favicon.svg', 'logo.svg', 'lang/en.json', 'lang/es.json', 'lang/zh-CN.json', 'lang/zh-TW.json', 'lang/ko.json', 'lang/ja.json'];
+var CACHE = 'ucplan-v25';
+var FILES = ['/', '/transfer-os', '/uc-course', '/coverage', '/counselors', '/uc-transfer-deadline', '/uc-transfer-deadlines.ics', '/tag-not-approved', 'styles.css', 'app.js', 'i18n.js', 'coverage.js', 'coverage.json', 'ucc-majors.json', 'manifest.webmanifest', 'favicon.svg', 'logo.svg', 'lang/en.json', 'lang/es.json', 'lang/zh-CN.json', 'lang/zh-TW.json', 'lang/ko.json', 'lang/ja.json'];
 self.addEventListener('install', function (e) {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES); }));

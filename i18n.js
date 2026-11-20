@@ -198,7 +198,7 @@
     var page = document.documentElement.getAttribute('data-page');
     // Homepage defaults to English. A saved choice still wins.
     // Other translated pages follow the browser language. Static SEO pages stay English.
-    var followBrowser = page !== 'index' && document.querySelector('[data-i18n^="index."],[data-i18n^="tos."],[data-i18n^="cuc."],[data-i18n^="cov."],[data-i18n^="tna."],[data-i18n^="cns."]');
+    var followBrowser = page !== 'index' && document.querySelector('[data-i18n^="index."],[data-i18n^="tos."],[data-i18n^="cuc."],[data-i18n^="cov."],[data-i18n^="tna."],[data-i18n^="cns."],[data-i18n^="deadline."]');
     var start = saved ? stored : (followBrowser ? detect() : 'en');
     if (btn) { btn.textContent = langName(start); }
     // English also loads the dictionary so tokens and runtime text are ready.
